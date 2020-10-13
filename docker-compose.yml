@@ -3,6 +3,7 @@ version: "3.7"
 services:
     build:
         build: .
-        entrypoint:  cp /usr/bin/ympd /build/ && cp /ympd/contrib/ympd.service /build/ && cp /ympd/contrib/ympd.default /build/
+        entrypoint: bash /script.sh
         volumes:
             - ./build:/build
+            - ./script.sh:/script.sh
